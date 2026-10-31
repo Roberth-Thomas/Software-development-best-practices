@@ -32,6 +32,20 @@ Ferramentas entre parênteses são exemplos para Python. Item que não se aplica
 - **S10. Dois efeitos sem transação.** Mover arquivo e gravar registro: se o segundo falha, o primeiro é desfeito ou fica registrado com aviso. Confira o ponto em que isso acontece.
 - **S11. Configurações do GitHub.** Proteção da branch principal, secret scanning e relato privado de vulnerabilidades. Só se confere no GitHub: marque "?" e peça ao usuário para conferir em Settings.
 
+## Projetos com front web (n/a em app desktop)
+
+A tela só mostra e coleta; toda regra de negócio vive no backend. O F12 não se impede: o que ele mostra ou altera precisa ser inofensivo.
+
+- **W1. Regra só no backend.** Preço, desconto, permissão, status e qualquer decisão são calculados ou conferidos no servidor. Procure no código do front (JS/TS) por `if` que decida valor, permissão ou etapa.
+- **W2. Valor enviado nunca é confiado.** O backend recalcula totais e ignora campos que o usuário não pode definir (preço, papel, dono, status). Confira se algum handler copia o corpo da requisição direto para o banco.
+- **W3. Etapas no servidor.** O estado do fluxo (carrinho, pedido, cadastro em passos) fica gravado no servidor, e cada passo confere o anterior. Tente chamar o último endpoint sem os anteriores.
+- **W4. Permissão por registro, no servidor.** Cada leitura e escrita confere se aquele usuário pode mexer naquele registro, não só se está logado. Papel e permissão nunca vivem em `localStorage` nem em flag do front.
+- **W5. A API devolve só o permitido.** Campos sensíveis não viajam para o front esconder: o F12 mostra tudo que chegou pela rede.
+- **W6. Sem segredo no código do navegador.** Chaves privadas, tokens e URLs internas ficam no servidor. Busque (`grep`) no build que vai ao navegador e nas variáveis expostas ao front.
+- **W7. Repetição limitada.** Limite de taxa e bloqueio de tentativas repetidas, principalmente no login e em endpoints caros.
+- **W8. Teste de adulteração por endpoint.** Chamado direto, sem o front, com valor trocado, passo pulado, id de outro usuário e sem login, o backend recusa. Confira se esses testes existem.
+- **W9. O front só exibe o erro do backend.** As mensagens de validação vêm do backend. Remover ou desativar todo o JS de validação não deixa passar nada inválido; o teste W8 prova isso.
+
 ## Como trabalhamos
 
 - **P1. Regras escritas.** O projeto tem `CLAUDE.md` com as regras de trabalho.

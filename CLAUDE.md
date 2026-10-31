@@ -19,6 +19,8 @@ Responda e comente em português do Brasil. Identificadores seguem o idioma que 
 ## Segurança
 
 - Valide todo dado externo (rede, arquivo, CSV, texto digitado) na borda, com a mesma regra para todas as fontes.
+- A tela só mostra e coleta; toda regra de negócio vive no backend. Trate tudo que chega do navegador como adulterável (F12): valores, ordem das etapas, ids e o código do front.
+- Todo endpoint tem teste de adulteração: chamado direto, sem o front, com valor trocado, passo pulado, id de outro usuário e sem login, o backend recusa.
 - Segredos ficam fora do código e do git; o `.gitignore` existe antes do primeiro commit.
 - Dois efeitos sem transação (arquivo + linha no banco) precisam de desfazer explícito.
 - Dependências com versão fixa; no CI, permissões mínimas e ações fixadas por hash.
