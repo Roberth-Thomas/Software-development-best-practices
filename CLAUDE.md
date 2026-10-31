@@ -4,10 +4,10 @@ Responda e comente em português do Brasil. Identificadores seguem o idioma que 
 
 ## Como trabalhamos
 
-- Divida o trabalho em fases pequenas. Cada fase termina com teste passando e um commit, e a próxima só começa com a aprovação do Roberth.
+- Divida o trabalho em fases pequenas. Cada fase termina com teste passando e um commit, e a próxima só começa com a aprovação do usuário.
 - Peça aprovação explícita antes de qualquer ação que sai da máquina: push, PR, release, configuração do GitHub.
 - Relate o que foi verificado e o que ficou sem verificar. "Passou" só vale com a saída do teste vista nesta sessão.
-- O Roberth está aprendendo a automatizar com IA: explique em uma ou duas frases o porquê de cada decisão não óbvia.
+- O usuário está aprendendo a automatizar com IA: explique em uma ou duas frases o porquê de cada decisão não óbvia.
 
 ## Qualidade de código
 
@@ -25,4 +25,4 @@ Responda e comente em português do Brasil. Identificadores seguem o idioma que 
 
 ## Skill
 
-Para auditar um projeto existente ou iniciar um novo, o Roberth chama `/boas-praticas`.
+Para auditar um projeto existente ou iniciar um novo, o usuário chama `/boas-praticas`.

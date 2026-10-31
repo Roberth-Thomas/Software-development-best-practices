@@ -7,20 +7,20 @@ disable-model-invocation: true
 
 # Boas práticas
 
-Dois modos: **auditar** um projeto existente ou **iniciar** um projeto novo. Se o Roberth não disse qual, pergunte com AskUserQuestion (menu clicável).
+Dois modos: **auditar** um projeto existente ou **iniciar** um projeto novo. Se o usuário não disse qual, pergunte com AskUserQuestion (menu clicável).
 
 ## Auditar
 
-A auditoria só lê. Nada no projeto muda até o Roberth aprovar as correções.
+A auditoria só lê. Nada no projeto muda até o usuário aprovar as correções.
 
 1. Leia `README.md`, `SECURITY.md`, os workflows de CI, a lista de arquivos e `git log --oneline -20`. Conclusão: você sabe a stack e o que o projeto afirma fazer.
 2. Percorra [references/checklist.md](references/checklist.md) item a item. Cada item recebe um status (✔ tem, ✘ falta, ? não verificado, n/a não se aplica) e uma **evidência**: `arquivo:linha`, saída de comando ou o motivo de não ter conseguido conferir. Item sem evidência é "?".
 3. Rode os testes do projeto uma vez e cite o resultado. Sem execução, o item de testes fica "?".
-4. Entregue o relatório no chat. Grave em arquivo só se o Roberth pedir.
+4. Entregue o relatório no chat. Grave em arquivo só se o usuário pedir.
 
 A auditoria termina quando todos os itens do checklist têm status e evidência. O que só se confere fora da máquina (configurações do GitHub) fica "?" com o pedido "confira em Settings → …"; a API do GitHub só entra com aprovação.
 
-Para uma auditoria funda, o Roberth pode pedir revisão por agentes: `security-reviewer`, `silent-failure-hunter` e `python-reviewer` em paralelo, cada um com o checklist da sua área. Corrija primeiro o que **dois ou mais** apontaram; o que só um apontou entra no relatório depois de você conferir o trecho no código.
+Para uma auditoria funda, o usuário pode pedir revisão por agentes: `security-reviewer`, `silent-failure-hunter` e `python-reviewer` em paralelo, cada um com o checklist da sua área. Corrija primeiro o que **dois ou mais** apontaram; o que só um apontou entra no relatório depois de você conferir o trecho no código.
 
 ### Formato do relatório
 
@@ -31,4 +31,4 @@ Para uma auditoria funda, o Roberth pode pedir revisão por agentes: `security-r
 
 ## Iniciar
 
-Siga [references/projeto-novo.md](references/projeto-novo.md), etapa por etapa. Cada etapa tem um critério de conclusão: mostre a evidência ao Roberth antes de passar à seguinte. As decisões dele (linguagem, licença, se vai para o GitHub) saem em AskUserQuestion.
+Siga [references/projeto-novo.md](references/projeto-novo.md), etapa por etapa. Cada etapa tem um critério de conclusão: mostre a evidência ao usuário antes de passar à seguinte. As decisões do usuário (linguagem, licença, se vai para o GitHub) saem em AskUserQuestion.

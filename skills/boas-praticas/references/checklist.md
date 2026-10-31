@@ -30,7 +30,7 @@ Ferramentas entre parênteses são exemplos para Python. Item que não se aplica
 - **S8. SECURITY.md preciso.** Diz como relatar uma vulnerabilidade (relato privado) e o que o app recusa fazer. Confira cada frase contra o código: documentação mais forte que o código é achado.
 - **S9. Release verificável.** SHA-256 publicado junto do binário. Melhor ainda: atestado de procedência (`attest-build-provenance`) e tags `v*` protegidas.
 - **S10. Dois efeitos sem transação.** Mover arquivo e gravar registro: se o segundo falha, o primeiro é desfeito ou fica registrado com aviso. Confira o ponto em que isso acontece.
-- **S11. Configurações do GitHub.** Proteção da branch principal, secret scanning e relato privado de vulnerabilidades. Só se confere no GitHub: marque "?" e peça ao Roberth para conferir em Settings.
+- **S11. Configurações do GitHub.** Proteção da branch principal, secret scanning e relato privado de vulnerabilidades. Só se confere no GitHub: marque "?" e peça ao usuário para conferir em Settings.
 
 ## Como trabalhamos
 
